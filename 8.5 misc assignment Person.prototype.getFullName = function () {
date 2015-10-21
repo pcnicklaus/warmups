@@ -1,0 +1,40 @@
+Person.prototype.getFullName = function () {
+  console.log(this.firstAndLastName);
+}
+Person.getFullName()
+
+michael.getFullName()
+
+Person.prototype.getFirstName = function () {
+  var x = this.firstAndLastName.split(" ");
+  console.log(x[0])
+  return x[0];
+}
+Person.getFirstName()
+
+Person.prototype.getLastName = function () {
+  var x = this.firstAndLastName.split(" ");
+  console.log(x[1])
+  return x[1];
+}
+Person.getLastName()
+
+var Student = function (name, inSchool) {
+  this.name = name;
+  this.inSchool = true;
+  this.isInstructor = false;
+}
+
+Student.prototype = new Person()
+
+var patrick = new Student('patrick');
+patrick
+returns: Student {name: "patrick", inSchool: true, isInstructor: false}
+
+var ryan = new Student('ryan')
+ryan
+returns: Student {name: "ryan", inSchool: true, isInstructor: false}
+
+var zack = new Person('zack');
+zack
+returns: Person {firstAndLastName: "zack", isInstructor: true}
